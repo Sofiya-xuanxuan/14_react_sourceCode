@@ -19,11 +19,16 @@ class Comp2 extends Component{
 }
 const foo='bar';
 
+const user=[
+    {name:'sofiya'},
+    {name:'tom'},
+]
 const jsx=(
     <div id='demo' className={foo}>
         <span>hi</span>
         <Comp name='函数组件'></Comp>
         <Comp2 name='类组件'></Comp2>
+        {user.map(u=>(<div>{u.name}</div>))}
     </div>
 );
 //jsx -> React.createElement -> vdom

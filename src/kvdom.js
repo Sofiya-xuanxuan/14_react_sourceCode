@@ -35,7 +35,11 @@ function createNativeElement(vnode){
     })
     //递归
     children.forEach(c=>{
-        node.appendChild(initNode(c));
+        if(Array.isArray(c)) {
+           c.forEach(n=>node.appendChild(initNode(n)));
+        }else {
+            node.appendChild(initNode(c));
+        }
     })
 
     return node;
